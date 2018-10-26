@@ -48,8 +48,8 @@ class Day
   end
   
   def duration
-    # Minimum is 30 min
-    [commits.last.timestamp - commits.first.timestamp, 30*60].max
+    at_least_30_min = [commits.last.timestamp - commits.first.timestamp, 30*60].max
+    max_5_hours = [at_least_30_min, 5*60*60].min
   end
   
   def hours_string
